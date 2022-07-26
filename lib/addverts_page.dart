@@ -175,11 +175,10 @@ class AddvertsPage extends StatelessWidget {
           ),
         ),
         body: ListView(
-          // padding: EdgeInsets.all(10),
           children: [
             createCarCard(
                 "assets/images/cobalt.jpeg",
-                "Chevrolet Cobalt 2022",
+                "Chevrolet Cobalt",
                 "2022\"y.,\"sedan, 2.5\"l., \"mexanika, benzin",
                 "Olot, 2 Oktabr",
                 1),
@@ -190,7 +189,7 @@ class AddvertsPage extends StatelessWidget {
             ),
             createCarCard(
                 "assets/images/spark.jpeg",
-                "Chevrolet Spark 2020",
+                "Chevrolet Spark",
                 "2020\"yil.,\"Hatchback, 1.25\"l., \"avtomat, benzin/gaz",
                 "Termiz, 1 Oktyabr",
                 0),
@@ -201,7 +200,7 @@ class AddvertsPage extends StatelessWidget {
             ),
             createCarCard(
                 "assets/images/onix.jpeg",
-                "Chevrolet Onix 2022",
+                "Chevrolet Onix",
                 "2022\"yil.,\"sedan, 1.8\"l., \"avtomat, benzin",
                 "Toshkent, 29 Sentabr",
                 0),
@@ -212,7 +211,7 @@ class AddvertsPage extends StatelessWidget {
             ),
             createCarCard(
                 "assets/images/caddy.jpeg",
-                "Volkswagen Caddy 2021",
+                "Volkswagen Caddy",
                 "2021\"yil.,\"Suv, 1.6\"l., \"mexanika, benzin/gaz",
                 "Guliston, 29 Sentabr",
                 0),
@@ -223,7 +222,7 @@ class AddvertsPage extends StatelessWidget {
             ),
             createCarCard(
                 "assets/images/accent.jpeg",
-                "Hunday Accent 2022",
+                "Hunday Accent",
                 "2022\"yil.,\"Sedan, 1.8\"l., \"avtomat, benzin",
                 "Samarqand, 27 Sentabr",
                 0),
@@ -234,7 +233,7 @@ class AddvertsPage extends StatelessWidget {
             ),
             createCarCard(
                 "assets/images/captiva.jpeg",
-                "Chevrolet Captiva 2018",
+                "Chevrolet Captiva",
                 "2018\"yil.,\"Cuv, 2.4\"l., \"avtomat, benzin/gaz",
                 "Qarshi, 15 Sentabr",
                 0),
@@ -245,7 +244,7 @@ class AddvertsPage extends StatelessWidget {
             ),
             createCarCard(
                 "assets/images/santafe.jpeg",
-                "Hunday Santafe 2022",
+                "Hunday Santafe",
                 "2022\"yil.,\"Cuv, 3.2\"l., \"avtomat, benzin",
                 "Qibray, 12 Sentabr",
                 0),
@@ -256,7 +255,7 @@ class AddvertsPage extends StatelessWidget {
             ),
             createCarCard(
                 "assets/images/tucson.jpeg",
-                "Hunday Tucson 2022",
+                "Hunday Tucson",
                 "2022\"yil.,\"Cuv, 3.2\"l., \"avtomat, benzin",
                 "Toshkent, 11 Sentabr",
                 0),
