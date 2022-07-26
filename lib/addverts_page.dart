@@ -94,8 +94,46 @@ class AddvertsPage extends StatelessWidget {
             ],
           ),
         ),
-        body: ListView(),
+        body: ListView(
+          padding: EdgeInsets.all(10),
+          children: [
+            createCarCard(),
+          ],
+        ),
       ),
+    );
+  }
+
+  Widget createCarCard(String addImagePath, String addTitle,
+      String addDescription, String addAddressAndPostedDate, int imagesCount) {
+    return Row(
+      children: [
+        Container(
+          child: Image.asset(addImagePath),
+        ),
+        Column(
+          children: [
+            Text(
+              addTitle,
+            ),
+            Text(
+              addDescription,
+            ),
+            Text(
+              addAddressAndPostedDate,
+            ),
+            Row(
+              children: [
+                if (imagesCount > 0) ...[
+                  Icon(Icons.photo_camera),
+                  Text(imagesCount.toString()),
+                ] else
+                  ...[],
+              ],
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
