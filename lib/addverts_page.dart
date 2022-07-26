@@ -22,7 +22,7 @@ class AddvertsPage extends StatelessWidget {
         width: double.infinity,
         // height: MediaQuery.of(context).size.height * 0.2,
         height: deviceMode,
-        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -89,6 +89,7 @@ class AddvertsPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          shadowColor: Colors.white,
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
