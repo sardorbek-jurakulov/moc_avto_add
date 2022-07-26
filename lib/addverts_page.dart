@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddvertsPage extends StatelessWidget {
   const AddvertsPage({Key? key}) : super(key: key);
@@ -35,11 +36,14 @@ class AddvertsPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const Text(
-                "Avtoelon",
-                style: TextStyle(
-                  fontSize: 24,
-                  letterSpacing: 1.5,
+              Container(
+                margin: const EdgeInsets.only(left: 20, right: 15),
+                child: const Text(
+                  "Avtoelon",
+                  style: TextStyle(
+                    fontSize: 25,
+                    letterSpacing: 1.5,
+                  ),
                 ),
               ),
               OutlinedButton(
@@ -51,7 +55,7 @@ class AddvertsPage extends StatelessWidget {
                     color: Colors.white,
                     width: 0.5,
                   ),
-                  minimumSize: const Size(10, 10), // Set this
+                  minimumSize: const Size(22, 22), // Set this
                   padding: EdgeInsets.zero, // and this
                 ),
                 onPressed: () {},
@@ -70,19 +74,22 @@ class AddvertsPage extends StatelessWidget {
                     color: Colors.white,
                     width: 0.5,
                   ),
-                  minimumSize: const Size(15, 15), // Set this
+                  minimumSize: const Size(22, 22), // Set this
                   padding: EdgeInsets.zero, // and this
                 ),
                 onPressed: () {},
                 child: const Icon(
-                  Icons.add,
+                  FontAwesomeIcons.dollarSign,
                   color: Colors.white,
-                  size: 25,
+                  size: 18,
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.add),
+                icon: const Icon(
+                  FontAwesomeIcons.magnifyingGlass,
+                  size: 19,
+                ),
               ),
             ],
           ),
