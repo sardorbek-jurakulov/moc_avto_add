@@ -6,6 +6,76 @@ class AddvertsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget createCarCard(
+        String addImagePath,
+        String addTitle,
+        String addDescription,
+        String addAddressAndPostedDate,
+        int imagesCount) {
+      return Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height * 0.2,
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.35,
+              height: double.infinity,
+              child: Image.asset(addImagePath, fit: BoxFit.contain),
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    addTitle,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF444444),
+                    ),
+                  ),
+                  Text(
+                    addDescription,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF444444),
+                    ),
+                  ),
+                  Text(
+                    addAddressAndPostedDate,
+                    style: TextStyle(
+                      color: Color(0xFFAAAAAA),
+                      fontSize: 13,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      if (imagesCount > 0) ...[
+                        const Icon(
+                          Icons.photo_camera,
+                          color: Color(0xFFAAAAAA),
+                          size: 20,
+                        ),
+                        Text(imagesCount.toString(),
+                            style: TextStyle(
+                              color: Color(0xFF999999),
+                              fontSize: 12,
+                            )),
+                      ] else
+                        ...[],
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -95,45 +165,33 @@ class AddvertsPage extends StatelessWidget {
           ),
         ),
         body: ListView(
-          padding: EdgeInsets.all(10),
+          // padding: EdgeInsets.all(10),
           children: [
-            createCarCard(),
+            createCarCard(
+                "assets/images/cobalt.jpeg",
+                "Chevrolet Cobalt 2022",
+                "2022\"y.,\"sedan, 2.5\"l., \"mexanika, benzin",
+                "Olot, 2 Oktabr",
+                1),
+            const Divider(
+              height: 0,
+              thickness: 2,
+              color: Color(0xFFEEEEEE),
+            ),
+            createCarCard(
+                "assets/images/spark.jpeg",
+                "Chevrolet Spark 2020",
+                "2020\"yil.,\"Hatchback, 1.25\"l., \"avtomat, benzin/gaz",
+                "Termiz, 29 fevral",
+                0),
+            const Divider(
+              height: 0,
+              thickness: 2,
+              color: Color(0xFFEEEEEE),
+            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget createCarCard(String addImagePath, String addTitle,
-      String addDescription, String addAddressAndPostedDate, int imagesCount) {
-    return Row(
-      children: [
-        Container(
-          child: Image.asset(addImagePath),
-        ),
-        Column(
-          children: [
-            Text(
-              addTitle,
-            ),
-            Text(
-              addDescription,
-            ),
-            Text(
-              addAddressAndPostedDate,
-            ),
-            Row(
-              children: [
-                if (imagesCount > 0) ...[
-                  Icon(Icons.photo_camera),
-                  Text(imagesCount.toString()),
-                ] else
-                  ...[],
-              ],
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
