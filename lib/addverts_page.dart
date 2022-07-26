@@ -10,18 +10,26 @@ class AddvertsPage extends StatelessWidget {
         appBar: AppBar(
             title: Row(children: [
           Stack(
+            clipBehavior: Clip.none,
+            // fit: StackFit.expand,
+            // clipBehavior: Clip.antiAliasWithSaveLayer,
+            // overflow: Overflow.visible,
             children: [
               Icon(Icons.menu),
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: const BoxDecoration(
-                  color: Colors.red,
-                  shape: BoxShape.circle,
-                ),
-                child: const Text(
-                  "1",
-                  style: TextStyle(
-                    fontSize: 8,
+              Positioned(
+                bottom: 8,
+                left: 10,
+                child: Container(
+                  padding: EdgeInsets.all(6),
+                  decoration: const BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Text(
+                    "1",
+                    style: TextStyle(
+                      fontSize: 10,
+                    ),
                   ),
                 ),
               ),

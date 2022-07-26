@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:moc_avto_elon/addverts_page.dart";
+import "package:moc_avto_elon/fot_test.dart";
 
 void main() {
   runApp(const MyApp());
