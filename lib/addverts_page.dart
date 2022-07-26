@@ -6,6 +6,12 @@ class AddvertsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double deviceMode = MediaQuery.of(context).size.height * 0.2;
+
+    if (MediaQuery.of(context).size.height < 400) {
+      deviceMode = MediaQuery.of(context).size.height * 0.4;
+    }
+
     Widget createCarCard(
         String addImagePath,
         String addTitle,
@@ -14,7 +20,8 @@ class AddvertsPage extends StatelessWidget {
         int imagesCount) {
       return Container(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.2,
+        // height: MediaQuery.of(context).size.height * 0.2,
+        height: deviceMode,
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
