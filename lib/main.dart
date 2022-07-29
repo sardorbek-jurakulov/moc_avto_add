@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import "package:moc_avto_elon/addverts_page.dart";
 import "package:moc_avto_elon/fot_test.dart";
+import "package:moc_avto_elon/addverts_page.dart";
+import "package:moc_avto_elon/advert_details_page.dart";
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AddvertsPage(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => AddvertsPage(),
+        "/advert/details": (context) => AdvertDetailsPage(),
+      },
+      // home: const AddvertsPage(),
     );
   }
 }

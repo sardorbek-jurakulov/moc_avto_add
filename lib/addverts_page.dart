@@ -18,70 +18,79 @@ class AddvertsPage extends StatelessWidget {
         String addDescription,
         String addAddressAndPostedDate,
         int imagesCount) {
-      return Container(
-        width: double.infinity,
-        // height: MediaQuery.of(context).size.height * 0.2,
-        height: deviceMode,
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width * 0.35,
-              height: double.infinity,
-              child: Image.asset(addImagePath, fit: BoxFit.cover),
-            ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      addTitle,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xFF444444),
+      return InkWell(
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            "/advert/details",
+            arguments: {"advertTitle": addTitle},
+          );
+        },
+        child: Container(
+          width: double.infinity,
+          // height: MediaQuery.of(context).size.height * 0.2,
+          height: deviceMode,
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.35,
+                height: double.infinity,
+                child: Image.asset(addImagePath, fit: BoxFit.cover),
+              ),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        addTitle,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF444444),
+                        ),
                       ),
-                    ),
-                    Text(
-                      addDescription,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFF444444),
+                      Text(
+                        addDescription,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF444444),
+                        ),
                       ),
-                    ),
-                    Text(
-                      addAddressAndPostedDate,
-                      style: const TextStyle(
-                        color: Color(0xFFAAAAAA),
-                        fontSize: 13,
+                      Text(
+                        addAddressAndPostedDate,
+                        style: const TextStyle(
+                          color: Color(0xFFAAAAAA),
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
-                    Row(
-                      children: [
-                        if (imagesCount > 0) ...[
-                          const Icon(
-                            Icons.photo_camera,
-                            color: Color(0xFFAAAAAA),
-                            size: 20,
-                          ),
-                          Text(imagesCount.toString(),
-                              style: const TextStyle(
-                                color: Color(0xFF999999),
-                                fontSize: 12,
-                              )),
-                        ] else
-                          ...[],
-                      ],
-                    ),
-                  ],
+                      Row(
+                        children: [
+                          if (imagesCount > 0) ...[
+                            const Icon(
+                              Icons.photo_camera,
+                              color: Color(0xFFAAAAAA),
+                              size: 20,
+                            ),
+                            Text(imagesCount.toString(),
+                                style: const TextStyle(
+                                  color: Color(0xFF999999),
+                                  fontSize: 12,
+                                )),
+                          ] else
+                            ...[],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     }
