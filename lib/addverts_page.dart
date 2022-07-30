@@ -236,8 +236,8 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 10,
-              thickness: 1,
+              height: 5,
+              thickness: 2,
               color: Color(0xFFDDDDDD),
             ),
             createCarCard(
@@ -260,7 +260,7 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 0,
+              height: 5,
               thickness: 2,
               color: Color(0xFFEEEEEE),
             ),
@@ -284,7 +284,7 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 0,
+              height: 5,
               thickness: 2,
               color: Color(0xFFEEEEEE),
             ),
@@ -308,7 +308,7 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 0,
+              height: 5,
               thickness: 2,
               color: Color(0xFFEEEEEE),
             ),
@@ -332,7 +332,7 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 0,
+              height: 5,
               thickness: 2,
               color: Color(0xFFEEEEEE),
             ),
@@ -356,7 +356,7 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 0,
+              height: 5,
               thickness: 2,
               color: Color(0xFFEEEEEE),
             ),
@@ -380,7 +380,7 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 0,
+              height: 5,
               thickness: 2,
               color: Color(0xFFEEEEEE),
             ),
@@ -404,7 +404,7 @@ class AddvertsPage extends StatelessWidget {
               "",
             ),
             const Divider(
-              height: 0,
+              height: 5,
               thickness: 2,
               color: Color(0xFFEEEEEE),
             ),

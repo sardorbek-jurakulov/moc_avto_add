@@ -39,6 +39,19 @@ class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
           return Column(
             children: [
               Text(advertDetailsInfo[index].advertTitle),
+              Text(advertDetailsInfo[index].advertDescription),
+              Text(advertDetailsInfo[index].advertAddress),
+              Text(advertDetailsInfo[index].advertPublishedDate),
+              Text(advertDetailsInfo[index].carBrand),
+              Text(advertDetailsInfo[index].carModel),
+              Text(advertDetailsInfo[index].carManufacturedDate),
+              Text(advertDetailsInfo[index].carType),
+              Text(advertDetailsInfo[index].carTransmissionBoxType),
+              Text(advertDetailsInfo[index].carColor),
+              Text(advertDetailsInfo[index].carDistanceTraveled),
+              Text(advertDetailsInfo[index].engineDrivesSource),
+              Text(advertDetailsInfo[index].carSeatsCount),
+              Text(advertDetailsInfo[index].carPrice),
             ],
           );
         },
