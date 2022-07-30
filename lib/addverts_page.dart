@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import "package:moc_avto_elon/models/advert_detail.dart";
 
 class AddvertsPage extends StatelessWidget {
   const AddvertsPage({Key? key}) : super(key: key);
@@ -12,7 +13,27 @@ class AddvertsPage extends StatelessWidget {
       deviceMode = MediaQuery.of(context).size.height * 0.4;
     }
 
-    List<String> advertInfo = [];
+    List<String> advertInfo = [
+      AdvertDetails(
+        "assets/images/cobalt.jpeg",
+        "Chevrolet Cobalt",
+        "2022\"y.,\"sedan, 2.5\"l., \"mexanika, benzin",
+        "Olot, 2 Oktabr",
+        "1",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+      ),
+    ];
 
     Widget createCarCard(
         String addImagePath,

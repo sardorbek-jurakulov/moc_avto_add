@@ -13,7 +13,7 @@ class AdvertDetails {
   String engineDrivesSource;
   String carSeatsCount;
   String carPrice;
-  // List<String> carImages: [];
+  List<String> carImages;
 
   AdvertDetails(
       this.advertTitle,
@@ -29,5 +29,6 @@ class AdvertDetails {
       this.carDistanceTraveled,
       this.engineDrivesSource,
       this.carSeatsCount,
-      this.carPrice);
+      this.carPrice,
+      this.carImages);
 }
