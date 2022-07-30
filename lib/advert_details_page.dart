@@ -14,7 +14,21 @@ class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
     final args =
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     List<AdvertDetails> advertDetailsInfo = [
-      AdvertDetails(args["advertTitle"] ?? ""),
+      AdvertDetails(
+          args["advertTitle"] ?? "",
+          args["advertDescription"] ?? "",
+          args["advertAddress"] ?? "",
+          args["advertPublishedDate"] ?? "",
+          args["carBrand"] ?? "",
+          args["carModel"] ?? "",
+          args["carManufacturedDate"] ?? "",
+          args["carType"] ?? "",
+          args["carTransmissionBoxType"] ?? "",
+          args["carColor"] ?? "",
+          args["carDistanceTraveled"] ?? "",
+          args["engineDrivesSource"] ?? "",
+          args["carSeatsCount"] ?? "",
+          args["carPrice"] ?? ""),
     ];
     return SafeArea(
         child: Scaffold(
