@@ -14,23 +14,23 @@ class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
     final args = ModalRoute.of(context)!.settings.arguments as Map;
     List<AdvertDetails> advertDetailsInfo = [
       AdvertDetails(
-        args["advertTitle"] ?? "",
-        args["advertDescription"] ?? "",
-        args["advertAddress"] ?? "",
-        args["advertPublishedDate"] ?? "",
-        args["advertAddressAndPostedDate"] ?? "",
-        args["carBrand"] ?? "",
-        args["carModel"] ?? "",
-        args["carManufacturedDate"] ?? "",
-        args["carType"] ?? "",
-        args["carTransmissionBoxType"] ?? "",
-        args["carColor"] ?? "",
-        args["carDistanceTraveled"] ?? "",
-        args["engineDrivesSource"] ?? "",
-        args["carSeatsCount"] ?? "",
-        args["carPrice"] ?? "",
-        args["carImages"] ?? [],
-        args["carImagesCount"] ?? "",
+        args["advertTitle"],
+        args["advertDescription"],
+        args["advertAddress"],
+        args["advertPublishedDate"],
+        args["advertAddressAndPostedDate"],
+        args["carBrand"],
+        args["carModel"],
+        args["carManufacturedDate"],
+        args["carType"],
+        args["carTransmissionBoxType"],
+        args["carColor"],
+        args["carDistanceTraveled"],
+        args["engineDrivesSource"],
+        args["carSeatsCount"],
+        args["carPrice"],
+        args["carImages"],
+        args["carImagesCount"],
       ),
     ];
     return SafeArea(
@@ -43,6 +43,7 @@ class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
         itemBuilder: (BuildContext context, int index) {
           return Column(
             children: [
+              Image.asset(advertDetailsInfo[index].carImages[0]),
               Text(advertDetailsInfo[index].advertTitle),
               Text(advertDetailsInfo[index].advertDescription),
               Text(advertDetailsInfo[index].advertAddress),
@@ -57,6 +58,24 @@ class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
               Text(advertDetailsInfo[index].engineDrivesSource),
               Text(advertDetailsInfo[index].carSeatsCount),
               Text(advertDetailsInfo[index].carPrice),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.pop(context);
+                  });
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.arrow_back),
+                    Text(
+                      "Back",
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           );
         },
