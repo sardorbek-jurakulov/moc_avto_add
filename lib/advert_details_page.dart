@@ -11,28 +11,33 @@ class AdvertDetailsPage extends StatefulWidget {
 class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
   @override
   Widget build(BuildContext context) {
-    final args =
-        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
     List<AdvertDetails> advertDetailsInfo = [
       AdvertDetails(
-          args["advertTitle"] ?? "",
-          args["advertDescription"] ?? "",
-          args["advertAddress"] ?? "",
-          args["advertPublishedDate"] ?? "",
-          args["carBrand"] ?? "",
-          args["carModel"] ?? "",
-          args["carManufacturedDate"] ?? "",
-          args["carType"] ?? "",
-          args["carTransmissionBoxType"] ?? "",
-          args["carColor"] ?? "",
-          args["carDistanceTraveled"] ?? "",
-          args["engineDrivesSource"] ?? "",
-          args["carSeatsCount"] ?? "",
-          args["carPrice"] ?? ""),
+        args["advertTitle"] ?? "",
+        args["advertDescription"] ?? "",
+        args["advertAddress"] ?? "",
+        args["advertPublishedDate"] ?? "",
+        args["advertAddressAndPostedDate"] ?? "",
+        args["carBrand"] ?? "",
+        args["carModel"] ?? "",
+        args["carManufacturedDate"] ?? "",
+        args["carType"] ?? "",
+        args["carTransmissionBoxType"] ?? "",
+        args["carColor"] ?? "",
+        args["carDistanceTraveled"] ?? "",
+        args["engineDrivesSource"] ?? "",
+        args["carSeatsCount"] ?? "",
+        args["carPrice"] ?? "",
+        args["carImages"] ?? [],
+        args["carImagesCount"] ?? "",
+      ),
     ];
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(advertDetailsInfo[0].advertTitle),
+      ),
       body: ListView.builder(
         itemCount: 1,
         itemBuilder: (BuildContext context, int index) {
