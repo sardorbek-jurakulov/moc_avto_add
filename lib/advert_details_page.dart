@@ -11,6 +11,15 @@ class AdvertDetailsPage extends StatefulWidget {
 class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
   @override
   Widget build(BuildContext context) {
+    double deviceStandingModeFinderWithWidth =
+        MediaQuery.of(context).size.width;
+    double deviceStandingModeFinderWithHeight =
+        MediaQuery.of(context).size.width;
+    double imageWidth = double.infinity;
+    double imageHeight = deviceStandingModeFinderWithHeight * 0.3;
+    if (deviceStandingModeFinderWithWidth > 290) {
+      imageWidth = deviceStandingModeFinderWithWidth * 0.5;
+    }
     final args = ModalRoute.of(context)!.settings.arguments as Map;
     List<AdvertDetails> advertDetailsInfo = [
       AdvertDetails(
@@ -37,47 +46,96 @@ class _AdvertDetailsPageState extends State<AdvertDetailsPage> {
         child: Scaffold(
       appBar: AppBar(
         title: Text(advertDetailsInfo[0].advertTitle),
+        shadowColor: Colors.transparent,
       ),
       body: ListView.builder(
         itemCount: 1,
         itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: [
-              Image.asset(advertDetailsInfo[index].carImages[0]),
-              Text(advertDetailsInfo[index].advertTitle),
-              Text(advertDetailsInfo[index].advertDescription),
-              Text(advertDetailsInfo[index].advertAddress),
-              Text(advertDetailsInfo[index].advertPublishedDate),
-              Text(advertDetailsInfo[index].carBrand),
-              Text(advertDetailsInfo[index].carModel),
-              Text(advertDetailsInfo[index].carManufacturedDate),
-              Text(advertDetailsInfo[index].carType),
-              Text(advertDetailsInfo[index].carTransmissionBoxType),
-              Text(advertDetailsInfo[index].carColor),
-              Text(advertDetailsInfo[index].carDistanceTraveled),
-              Text(advertDetailsInfo[index].engineDrivesSource),
-              Text(advertDetailsInfo[index].carSeatsCount),
-              Text(advertDetailsInfo[index].carPrice),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.pop(context);
-                  });
-                },
-                child: Row(
-                  children: [
-                    Icon(Icons.arrow_back),
-                    Text(
-                      "Back",
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
+          if (MediaQuery.of(context).size.width > 290) {
+            return Column(
+              children: [
+                Image.asset(
+                  advertDetailsInfo[index].carImages[0],
+                  width: imageWidth,
+                  height: imageHeight,
                 ),
-              ),
-            ],
-          );
+                Text(advertDetailsInfo[index].advertTitle),
+                Text(advertDetailsInfo[index].advertDescription),
+                Text(advertDetailsInfo[index].advertAddress),
+                Text(advertDetailsInfo[index].advertPublishedDate),
+                Text(advertDetailsInfo[index].carBrand),
+                Text(advertDetailsInfo[index].carModel),
+                Text(advertDetailsInfo[index].carManufacturedDate),
+                Text(advertDetailsInfo[index].carType),
+                Text(advertDetailsInfo[index].carTransmissionBoxType),
+                Text(advertDetailsInfo[index].carColor),
+                Text(advertDetailsInfo[index].carDistanceTraveled),
+                Text(advertDetailsInfo[index].engineDrivesSource),
+                Text(advertDetailsInfo[index].carSeatsCount),
+                Text(advertDetailsInfo[index].carPrice),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.pop(context);
+                    });
+                  },
+                  child: Row(
+                    children: [
+                      Icon(Icons.arrow_back),
+                      Text(
+                        "Back",
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          } else {
+            return Row(
+              children: [
+                Image.asset(
+                  advertDetailsInfo[index].carImages[0],
+                  width: imageWidth,
+                  height: imageHeight,
+                ),
+                Text(advertDetailsInfo[index].advertTitle),
+                Text(advertDetailsInfo[index].advertDescription),
+                Text(advertDetailsInfo[index].advertAddress),
+                Text(advertDetailsInfo[index].advertPublishedDate),
+                Text(advertDetailsInfo[index].carBrand),
+                Text(advertDetailsInfo[index].carModel),
+                Text(advertDetailsInfo[index].carManufacturedDate),
+                Text(advertDetailsInfo[index].carType),
+                Text(advertDetailsInfo[index].carTransmissionBoxType),
+                Text(advertDetailsInfo[index].carColor),
+                Text(advertDetailsInfo[index].carDistanceTraveled),
+                Text(advertDetailsInfo[index].engineDrivesSource),
+                Text(advertDetailsInfo[index].carSeatsCount),
+                Text(advertDetailsInfo[index].carPrice),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.pop(context);
+                    });
+                  },
+                  child: Row(
+                    children: [
+                      Icon(Icons.arrow_back),
+                      Text(
+                        "Back",
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }
         },
       ),
     ));

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "package:moc_avto_elon/fot_test.dart";
+// import "package:moc_avto_elon/fot_test.dart";
 import "package:moc_avto_elon/addverts_page.dart";
 import "package:moc_avto_elon/advert_details_page.dart";
 
